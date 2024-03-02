@@ -7,6 +7,9 @@ USA Economy Simulator Game. The player will be able to play as the chairman of t
 - Control Federal Funds Rate (Added 3/2/2024)
 - Economic Downturn Catalysts (WIP)
 - Advancing through time (WIP)
+- Check the Stock Market (WIP)
+
+### Other Project Information ###
 
 Project start date: March 1st, 2024
 
