@@ -132,8 +132,8 @@ func monthChange() {
 		month_name = month_names[11]
 	}
 
-	if month == 13 {
-		month = 2 - 1
+	if month == 13 { // bug to fix the month and year once time goes from December to January
+		month = month - 12
 		yearChange()
 	}
 
