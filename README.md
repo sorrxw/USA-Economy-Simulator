@@ -8,6 +8,7 @@ USA Economy Simulator Game. The player will be able to play as the chairman of t
 - Economic Downturn Catalysts (WIP)
 - Advancing through time (WIP)
 - Check the Stock Market (WIP)
+- Check USA Economic Data (WIP)
 
 ### Other Project Information ###
 
