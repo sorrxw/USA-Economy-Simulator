@@ -185,6 +185,8 @@ func economicData() {
 	fmt.Print("Unemployment Rate: ", unemployment_rate, "%\n")
 	fmt.Print("National Debt: $", national_debt, " Trillion")
 
+	options()
+
 }
 
 func stockMarketData() {
@@ -192,6 +194,8 @@ func stockMarketData() {
 	fmt.Print("\nSummary of Stock Market Data:\n")
 	fmt.Print("S&P 500 ($SPX): ", spx, "\n")
 	fmt.Print("NASDAQ ($IXIC): ", ixic)
+
+	options()
 
 }
 
