@@ -199,6 +199,6 @@ func stockMarketData() {
 
 }
 
-func events() {
+func blackSwanEvent() {
 
 }
