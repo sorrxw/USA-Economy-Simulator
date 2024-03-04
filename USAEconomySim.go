@@ -13,6 +13,9 @@ var unemployment_rate float32 = 3.70
 var national_debt float32 = 34.00
 var spx float32 = 4742.82
 var ixic float32 = 14765.94
+var dow float32 = 37715.05
+var total_financial_stress float32 = 40
+var player_first_name, player_last_name string
 
 func main() {
 
@@ -20,8 +23,6 @@ func main() {
 	fmt.Print("You are playing as the chairman of the Federal Reserve \n")
 	fmt.Print("The year is 2023 and rates have been halted for some time\n")
 	fmt.Print("The consumer is struggling and the country is looking for better housing prices\n")
-
-	var player_first_name, player_last_name string
 
 	fmt.Print("Enter a first name for yourself, chairman: ")
 	fmt.Scan(&player_first_name)
@@ -37,7 +38,8 @@ func options() {
 
 	var choice int
 
-	fmt.Print("\n\nIt is now ", month_name, " ", year)
+	fmt.Print("\n\nDate: ", month_name, " ", year)
+	fmt.Print("\nFinancial Stress: %", total_financial_stress)
 
 	fmt.Print("\n\nOptions: \n")
 	fmt.Print("1. Advance a Month\n")
@@ -149,6 +151,12 @@ func monthChange() {
 		yearChange()
 	}
 
+	financialStress()
+
+	nationalDebtChange()
+
+	stockMarketChange()
+
 	options()
 
 }
@@ -183,7 +191,7 @@ func economicData() {
 
 	fmt.Print("\nSummary of Economic Data:\n")
 	fmt.Print("Unemployment Rate: ", unemployment_rate, "%\n")
-	fmt.Print("National Debt: $", national_debt, " Trillion")
+	fmt.Print("National Debt: $", national_debt, " Trillion\n")
 
 	options()
 
@@ -193,12 +201,54 @@ func stockMarketData() {
 
 	fmt.Print("\nSummary of Stock Market Data:\n")
 	fmt.Print("S&P 500 ($SPX): ", spx, "\n")
-	fmt.Print("NASDAQ ($IXIC): ", ixic)
+	fmt.Print("NASDAQ ($IXIC): ", ixic, "\n")
+	fmt.Print("DOW JONES ($DJ): ", dow, "\n")
 
 	options()
 
 }
 
+func nationalDebtChange() {
+
+	if fed_funds_rate >= 5 {
+		national_debt = national_debt + (national_debt * 0.0043)
+	}
+}
+
+func stockMarketChange() {
+
+	if fed_funds_rate >= 0 {
+
+	}
+
+	if fed_funds_rate >= 5 && unemployment_rate <= 5 {
+		spx = spx + (spx * 0.02)
+		ixic = ixic + (ixic * 0.036)
+		dow = dow + (dow * 0.017)
+	}
+
+	if fed_funds_rate >= 10 {
+
+	}
+
+}
+
 func blackSwanEvent() {
+
+}
+
+func financialStress() {
+
+	if fed_funds_rate >= 0 {
+		total_financial_stress = total_financial_stress + 0.025
+	}
+
+	if fed_funds_rate >= 5 {
+		total_financial_stress = total_financial_stress + 0.05
+	}
+
+	if fed_funds_rate >= 10 {
+		total_financial_stress = total_financial_stress + 0.10
+	}
 
 }
