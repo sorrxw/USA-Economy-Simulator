@@ -4,18 +4,22 @@ package main
 
 import "fmt"
 
-var year int = 2047
-var fed_funds_rate float32 = 25.00
+var year int = 2024
+var fed_funds_rate float32 = 5.33
 var month int = 1
 var month_name = month_names[0]
 var month_names = [12]string{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
+var unemployment_rate float32 = 3.70
+var national_debt float32 = 34.00
+var spx float32 = 4742.82
+var ixic float32 = 14765.94
 
 func main() {
 
 	fmt.Print("Welcome to USA Economic Simulator \n\n")
 	fmt.Print("You are playing as the chairman of the Federal Reserve \n")
-	fmt.Print("The year is 2047 and rates are at an all time high of 25%\n")
-	fmt.Print("The consumer is struggling and the country is looking for some hope out of this economic downturn\n")
+	fmt.Print("The year is 2023 and rates have been halted for some time\n")
+	fmt.Print("The consumer is struggling and the country is looking for better housing prices\n")
 
 	var player_first_name, player_last_name string
 
@@ -36,8 +40,10 @@ func options() {
 	fmt.Print("\n\nIt is now ", month_name, " ", year)
 
 	fmt.Print("\n\nOptions: \n")
-	fmt.Print("1. Change Federal Funds Rate\n")
-	fmt.Print("2. Advance a month\n")
+	fmt.Print("1. Advance a Month\n")
+	fmt.Print("2. Change Federal Funds Rate\n")
+	fmt.Print("3. Check Economic Data\n")
+	fmt.Print("4. Check Stock Market Data\n")
 	fmt.Print("\nEnter your choice: ")
 
 	fmt.Scan(&choice)
@@ -45,10 +51,16 @@ func options() {
 	switch choice {
 
 	case 1:
-		changeFedFundsRate()
+		monthChange()
 
 	case 2:
-		monthChange()
+		changeFedFundsRate()
+
+	case 3:
+		economicData()
+
+	case 4:
+		stockMarketData()
 
 	}
 
@@ -164,5 +176,25 @@ func raiseFedFundsRate() {
 	fmt.Print("The new Federal Funds Rate is ", fed_funds_rate, "%")
 
 	options()
+
+}
+
+func economicData() {
+
+	fmt.Print("\nSummary of Economic Data:\n")
+	fmt.Print("Unemployment Rate: ", unemployment_rate, "%\n")
+	fmt.Print("National Debt: $", national_debt, " Trillion")
+
+}
+
+func stockMarketData() {
+
+	fmt.Print("\nSummary of Stock Market Data:\n")
+	fmt.Print("S&P 500 ($SPX): ", spx, "\n")
+	fmt.Print("NASDAQ ($IXIC): ", ixic)
+
+}
+
+func events() {
 
 }
