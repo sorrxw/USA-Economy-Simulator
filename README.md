@@ -23,3 +23,5 @@ USA Economy Simulator Game. The player will be able to play as the chairman of t
 Project start date: March 1st, 2024
 
 Main Contributors: Sorrxw (Lead Developer)
+
+EXE Compiled w/ https://ehubsoft.herokuapp.com/golang/
